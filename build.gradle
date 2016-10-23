@@ -17,29 +17,20 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 19
-        versionName '3.9'
-    }
-
-    signingConfigs {
-        release
+        versionCode 20
+        versionName '3.10'
     }
 
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.pro'
-            signingConfig signingConfigs.release
         }
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    lintOptions {
-        abortOnError false
     }
 }
 
@@ -50,12 +41,8 @@ repositories {
 
 dependencies {
     compile 'com.github.trikita:jedux:-SNAPSHOT'
-    compile 'com.github.trikita:promote:-SNAPSHOT'
     compile 'co.trikita:anvil-sdk15:0.3.1'
     compile 'org.immutables:gson:2.1.14'
     annotationProcessor 'org.immutables:value:2.1.14'
     provided 'org.immutables:value:2.1.14'
 }
-
-apply from: 'https://raw.github.com/trikita/gradle-android-signing/master/gradle-android-signing.gradle'
-
